@@ -7,7 +7,9 @@ const patientSchema=new Schema({
     gender:{type:String,enum:["Male","Female"]},
     phone:{type:String},
     visiting_Reason:{type:String},
-    appointments:[mongoose.Types.Schema.ObjectId]
+    appointments:[mongoose.Types.Schema.ObjectId],
+    email:{type:String},
+    notifications: [{ type: mongoose.Types.ObjectId, ref: 'Notification' }],
 })
 
 const Patient=model("Patient",patientSchema)
